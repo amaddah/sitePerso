@@ -1,0 +1,46 @@
+{% extends('AMBundle::base.html.twig') %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="card col-md-12">
+        <div class="card-header">
+            <h1>Formation list</h1>
+        </div>
+        <div class="card-block">
+                {% for formation in formations %}
+                    <div class="card">
+                        <div class="card-header">
+                            {{ formation.institut }}
+
+                        </div>
+                        <div class="card-block">
+                            <h4 class="card-title">
+                                <small>{% if formation.dateDebut %}{{ formation.dateDebut|date('Y-m-d H:i:s') }}{% endif %} -- {% if formation.dateFin %}{{ formation.dateFin|date('Y-m-d H:i:s') }}{% endif %}</small>
+                            </h4>
+                            <p class="card-text">{{ formation.diplome }}</p>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <a href="{{ path('formation_show', { 'id': formation.id }) }}">show</a>
+                            <a href="{{ path('formation_edit', { 'id': formation.id }) }}">edit</a>
+                        </div>
+                    </div>
+                    <hr />
+                {% endfor %}
+        </div>
+        <div class="card-footer text-muted">
+            <ul>
+                <li>
+                    <a href="{{ path('formation_new') }}">Create a new entry</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+

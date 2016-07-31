@@ -1,0 +1,77 @@
+{% extends('AMBundle::base.html.twig') %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .toggle.btn {
+            width: 4em !important;
+            height: 35px !important;
+            margin-bottom: 1em;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="card col-md-12">
+        <div class="card-header">
+            <h1>Mes expériences</h1>
+        </div>
+        <div class="card-block">
+                {% for experience in experiences %}
+                    <input id="toggle-event{{ experience.id }}" type="checkbox" checked data-toggle="toggle" data-onstyle="success">
+                    <div class="card">
+                        <div class="card-header">
+                            {{ experience.titre }}
+                        </div>
+                        <div class="card-block">
+                            <h4 class="card-title">
+                                <small>{% if experience.dateDebut %}{{ experience.dateDebut|date('Y-m-d H:i:s') }}{% endif %} -- {% if experience.dateFin %}{{ experience.dateFin|date('Y-m-d H:i:s') }}{% endif %}</small>
+                            </h4>
+                            <p class="card-text">{{ experience.description }}</p>
+                        </div>
+                        <div class="card-footer text-muted">
+                            {{ experience.membres }}
+                            <a href="{{ path('experience_show', { 'id': experience.id }) }}">show</a>
+                            <a href="{{ path('experience_edit', { 'id': experience.id }) }}">edit</a>
+                        </div>
+                    </div>
+                    <hr />
+                {% endfor %}
+        </div>
+        <div class="card-footer text-muted">
+            <ul>
+                <li>
+                    <a href="{{ path('experience_new') }}">Create a new entry</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function() {
+            {% for experience in experiences %}
+            if({{ experience.id }} != 1)
+            {
+                pere = $('#toggle-event{{ experience.id }}').parent()
+                pere.removeClass('btn-success').addClass('btn-default off');
+                pere.next('.card').hide();
+            }
+
+            $('#toggle-event{{ experience.id }}').change(function() {
+                that = $(this).parent().next('.card');
+                if(!$(this).prop('checked'))
+                        that.hide();
+                else
+                        that.show();
+
+            });
+
+        {% endfor %}
+        });
+    </script>
+{% endblock %}

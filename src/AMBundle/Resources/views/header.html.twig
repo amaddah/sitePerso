@@ -1,0 +1,10 @@
+{% set route = app.request.attributes.get('_route') %}
+
+{% set menuNavigation = (menuNavigation is defined ? menuNavigation : true) %}
+    {% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: true, staticTop: false, id: 'menuNavigation' } %}
+        {% block brand %} &nbsp; {% endblock %}
+
+        {% block menu %}
+            {{ mopa_bootstrap_menu('AMBundle:Builder:menuNavigation', {'automenu': 'navbar'}) }}
+        {% endblock %}
+    {% endembed %}

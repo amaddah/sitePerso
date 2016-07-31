@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mersonal website">
+    <meta name="keywords" content="Personal website">
+    <meta name="author" content="Amine MADDAH">
+
+    <title>{% block pageTitle %}Site personnel de Amine MADDAH{% endblock %}</title>
+
+    <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}" />
+
+    {% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/bmatznerfontawesome/css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-theme.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap2-toggle.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" />
+    {% endblock %}
+</head>
+
+<body>
+
+<header class="container-fluid">
+    {# En-tête du site, contenant la barre de menu #}
+    {% include 'AMBundle::header.html.twig' %}
+</header>
+
+{# Le container du corps de la page #}
+<section id="layout-container" {% block containerType %}class="container"{% endblock %}>
+    {% block body %}{% endblock %}
+</section>
+
+<footer>
+    {% include 'AMBundle::footer.html.twig' %}
+</footer>
+
+{% block javascripts %}
+    <!-- JavaScript -->
+    <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap2-toggle.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+{% endblock %}
+
+</body>
+</html>
