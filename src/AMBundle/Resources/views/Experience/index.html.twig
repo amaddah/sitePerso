@@ -18,8 +18,13 @@
         </div>
         <div class="card-block">
                 {% for experience in experiences %}
+                    {% if experience.id == 1 %}
                     <input id="toggle-event{{ experience.id }}" type="checkbox" checked data-toggle="toggle" data-onstyle="success">
                     <div class="card">
+                    {% else %}
+                    <input id="toggle-event{{ experience.id }}" type="checkbox" data-toggle="toggle">
+                    <div class="card" style="display:none">
+                    {% endif %}
                         <div class="card-header">
                             {{ experience.titre }}
                         </div>
@@ -55,12 +60,6 @@
     <script>
         $(function() {
             {% for experience in experiences %}
-            if({{ experience.id }} != 1)
-            {
-                pere = $('#toggle-event{{ experience.id }}').parent()
-                pere.removeClass('btn-success').addClass('btn-default off');
-                pere.next('.card').hide();
-            }
 
             $('#toggle-event{{ experience.id }}').change(function() {
                 that = $(this).parent().next('.card');
