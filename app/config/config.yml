@@ -91,6 +91,7 @@ knp_menu:
 
 mopa_bootstrap:
     menu: ~
+    form: ~ # Probleme affichage form
 
 
 twig:
