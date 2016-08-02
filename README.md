@@ -8,7 +8,7 @@ N'hésitez pas à me faire des suggestions ou des remarques.
 
 # Personal website project
 
-During my internship of my 4th year of IT school of engineer with INSA Val-de-Loire A Centre, I had the opportunity to work and master the Symfony framework.
+During my internship of my 4th year of IT school of engineer with INSA Centre Val-de-Loire, I had the opportunity to work and master the Symfony framework.
 
 I always wanted to create my own website from scratch. Thus, I took this opportunity in order to engage in this personal website project. I really hope that I will complete it.
 
