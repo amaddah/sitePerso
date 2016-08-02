@@ -1,4 +1,2 @@
 services:
-#    am.example:
-#        class: AMBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+    # rien

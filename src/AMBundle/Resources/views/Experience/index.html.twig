@@ -36,19 +36,23 @@
                         </div>
                         <div class="card-footer text-muted">
                             {{ experience.membres }}
+                            {% if is_granted('ROLE_ADMIN') %}
                             <a href="{{ path('experience_show', { 'id': experience.id }) }}">show</a>
                             <a href="{{ path('experience_edit', { 'id': experience.id }) }}">edit</a>
+                            {% endif %}
                         </div>
                     </div>
                     <hr />
                 {% endfor %}
         </div>
         <div class="card-footer text-muted">
+            {% if is_granted('ROLE_ADMIN') %}
             <ul>
                 <li>
                     <a href="{{ path('experience_new') }}">Create a new entry</a>
                 </li>
             </ul>
+            {% endif %}
         </div>
     </div>
 

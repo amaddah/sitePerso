@@ -23,19 +23,23 @@
                             <p class="card-text">{{ formation.diplome }}</p>
                         </div>
                         <div class="card-footer text-muted">
+                            {% if is_granted('ROLE_ADMIN') %}
                             <a href="{{ path('formation_show', { 'id': formation.id }) }}">show</a>
                             <a href="{{ path('formation_edit', { 'id': formation.id }) }}">edit</a>
+                            {% endif %}
                         </div>
                     </div>
                     <hr />
                 {% endfor %}
         </div>
         <div class="card-footer text-muted">
+            {% if is_granted('ROLE_ADMIN') %}
             <ul>
                 <li>
                     <a href="{{ path('formation_new') }}">Create a new entry</a>
                 </li>
             </ul>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use AMBundle\Entity\Contact;
 use AMBundle\Form\ContactType;
 
@@ -14,6 +15,7 @@ use AMBundle\Form\ContactType;
  * Contact controller.
  *
  * @Route("/contact")
+ * @Security("has_role('ROLE_ADMIN')")
  */
 class ContactController extends Controller
 {
@@ -23,6 +25,7 @@ class ContactController extends Controller
      * @Route("/", name="contact_index")
      * @Method("GET")
      * @Template
+     *
      */
     public function indexAction()
     {

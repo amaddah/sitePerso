@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use AMBundle\Entity\Experience;
 use AMBundle\Form\ExperienceType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -41,9 +42,12 @@ class ExperienceController extends Controller
      * @Route("/new", name="experience_new")
      * @Method({"GET", "POST"})
      * @Template()
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function newAction(Request $request)
     {
+        //$this->get('am.gestionAcces')->checkAcces();
+
         $experience = new Experience();
         $form = $this->createForm('AMBundle\Form\ExperienceType', $experience);
         $form->handleRequest($request);
@@ -57,7 +61,7 @@ class ExperienceController extends Controller
         }
 
         return array(
-            'Experience' => $experience,
+            'experience' => $experience,
             'form' => $form->createView(),
         );
     }
@@ -68,13 +72,14 @@ class ExperienceController extends Controller
      * @Route("/{id}", name="experience_show")
      * @Method("GET")
      * @Template()
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function showAction(Experience $experience)
     {
         $deleteForm = $this->createDeleteForm($experience);
 
         return array(
-            'Experience' => $experience,
+            'experience' => $experience,
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -84,6 +89,8 @@ class ExperienceController extends Controller
      *
      * @Route("/{id}/edit", name="experience_edit")
      * @Method({"GET", "POST"})
+     * @Template()
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function editAction(Request $request, Experience $experience)
     {
@@ -100,7 +107,7 @@ class ExperienceController extends Controller
         }
 
         return array(
-            'Experience' => $experience,
+            'experience' => $experience,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
@@ -111,6 +118,7 @@ class ExperienceController extends Controller
      *
      * @Route("/{id}", name="experience_delete")
      * @Method("DELETE")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function deleteAction(Request $request, Experience $experience)
     {
@@ -132,6 +140,7 @@ class ExperienceController extends Controller
      * @param Experience $experience The Experience entity
      *
      * @return \Symfony\Component\Form\Form The form
+     * @Security("has_role('ROLE_ADMIN')")
      */
     private function createDeleteForm(Experience $experience)
     {

@@ -26,7 +26,7 @@ class DefaultController extends Controller
         $form->add('submit', SubmitType::class, [
             'label' => 'Valider',
             'attr' => [
-                'class' => 'btn btn-default'
+                'class' => 'btn btn-default col-sm-offset-3'
                 ]
             ]);
         $form->handleRequest($request);
@@ -54,13 +54,13 @@ class DefaultController extends Controller
     {
         $contact = new Contact();
         $form = $this->createForm('AMBundle\Form\ContactType', $contact, array(
-            'action' => $this->generateUrl('index', array()),
+            'action' => $this->generateUrl('cv_index', array()),
             'method' => 'POST',
         ));
         $form->add('submit', SubmitType::class, [
             'label' => 'Valider',
             'attr' => [
-                'class' => 'btn btn-default'
+                'class' => 'btn btn-default col-sm-offset-3'
             ]
         ]);
         $form->handleRequest($request);

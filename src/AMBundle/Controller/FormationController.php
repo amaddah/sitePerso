@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use AMBundle\Entity\Formation;
 use AMBundle\Form\FormationType;
 
@@ -41,6 +42,7 @@ class FormationController extends Controller
      * @Route("/new", name="formation_new")
      * @Method({"GET", "POST"})
      * @Template()
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function newAction(Request $request)
     {
@@ -57,7 +59,7 @@ class FormationController extends Controller
         }
 
         return array(
-            'Formation' => $formation,
+            'formation' => $formation,
             'form' => $form->createView(),
         );
     }
@@ -68,13 +70,14 @@ class FormationController extends Controller
      * @Route("/{id}", name="formation_show")
      * @Method("GET")
      * @Template()
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function showAction(Formation $formation)
     {
         $deleteForm = $this->createDeleteForm($formation);
 
         return array(
-            'Formation' => $formation,
+            'formation' => $formation,
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -85,6 +88,7 @@ class FormationController extends Controller
      * @Route("/{id}/edit", name="formation_edit")
      * @Method({"GET", "POST"})
      * @Template()
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function editAction(Request $request, Formation $formation)
     {
@@ -101,7 +105,7 @@ class FormationController extends Controller
         }
 
         return array(
-            'Formation' => $formation,
+            'formation' => $formation,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
@@ -112,6 +116,7 @@ class FormationController extends Controller
      *
      * @Route("/{id}", name="formation_delete")
      * @Method("DELETE")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function deleteAction(Request $request, Formation $formation)
     {
@@ -133,6 +138,7 @@ class FormationController extends Controller
      * @param Formation $formation The Formation entity
      *
      * @return \Symfony\Component\Form\Form The form
+     * @Security("has_role('ROLE_ADMIN')")
      */
     private function createDeleteForm(Formation $formation)
     {

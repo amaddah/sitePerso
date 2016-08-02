@@ -2,6 +2,7 @@
 
 {% block stylesheets %}
     {{ parent() }}
+    {{ form_stylesheet(form)}}
 {% endblock %}
 
 {% block body %}
@@ -29,18 +30,10 @@
         <h4>Me contacter</h4>
         <div class="card-block">
             {{ form_start(form) }}
-            <div class="form-group co">
                 {{ form_row(form.nom, {'label' : 'Votre nom :'}) }}
-            </div>
-            <div class="form-group">
                 {{ form_row(form.titre, {'label' : 'Objet :'}) }}
-            </div>
-            <div class="form-group">
                 {{ form_row(form.message, {'label' : 'Votre message :'}) }}
-            </div>
-            <div class="form-group col-md-offset-4 col-md-8">
-                {{ form_widget(form.submit) }}
-            </div>
+                {{ form_widget(form.submit, {'class': 'col-sm-offset-3'}) }}
             {{ form_end(form) }}
         </div>
     </div>
@@ -50,4 +43,5 @@
 
 {% block javascripts %}
     {{ parent() }}
+    {{ form_javascript(form) }}
 {% endblock %}
