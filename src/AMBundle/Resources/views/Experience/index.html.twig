@@ -18,9 +18,10 @@
         </div>
         <div class="card-block">
                 {% for experience in experiences %}
-                    {% if experience.id == 1 %}
+                    {% if experience == experiences[0] %}
                     <input id="toggle-event{{ experience.id }}" type="checkbox" checked data-toggle="toggle" data-onstyle="success">
                     <div class="card">
+                    <h3>Experience en cours</h3>
                     {% else %}
                     <input id="toggle-event{{ experience.id }}" type="checkbox" data-toggle="toggle">
                     <div class="card" style="display:none">

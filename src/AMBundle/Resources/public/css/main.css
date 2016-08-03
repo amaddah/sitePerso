@@ -50,3 +50,8 @@ footer a:hover {
     text-decoration: none;
     color: #0D47A1;
 }
+
+body {
+    background: url('/bundles/am/images/main.png');
+    opacity: 0.9;
+}

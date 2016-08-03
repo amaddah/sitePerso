@@ -16,6 +16,7 @@
         </div>
         <div class="card-block">
             <div id="monCV"></div>
+            <p>Vous pouvez télécharger mon cv en cliquant <a href="{{ asset('bundles/am/doc/cv.pdf') }}" download>ici</a></p>
         </div>
         <hr />
         <div class="card col-md-8 col-md-offset-2">
@@ -39,7 +40,7 @@
     <script type="text/javascript" src="{{ asset('js/pdfobject.min.js') }}"></script>
     <script>
         var options = {
-            fallbackLink: '<p>Votre nagiateur ne supporte pas le lecteur PDF que j\'utilise.</p><p>C\'est nullement grave puisque vous pouvez télécharger mon cv <a href="{{ asset('doc/cv.pdf') }}">ici</a></p>'
+            fallbackLink: '<p>Votre nagiateur ne supporte pas le lecteur PDF que j\'utilise.</p>'
         };
         PDFObject.embed("{{ asset('doc/cv.pdf') }}", "#monCV", options);</script>
 {% endblock %}

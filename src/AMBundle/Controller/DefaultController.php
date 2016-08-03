@@ -37,7 +37,7 @@ class DefaultController extends Controller
             $em->persist($contact);
             $em->flush();
 
-            $this->redirectToRoute('contact_index');
+            $this->redirectToRoute('index');
         }
 
         return array(
@@ -71,7 +71,7 @@ class DefaultController extends Controller
             $em->persist($contact);
             $em->flush();
 
-            $this->redirectToRoute('contact_index');
+            $this->redirectToRoute('index');
         }
 
         return array(

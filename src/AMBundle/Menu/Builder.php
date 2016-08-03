@@ -20,7 +20,16 @@ class Builder implements ContainerAwareInterface
     {
         $menu = $factory->createItem('root');
 
-        $menu->addChild('Home', array('route' => 'index'));
+        $image = '<img src="/bundles/am/images/logoINSA.jpg" height="20" />';
+        $menu->addChild( $image , 
+          array(
+            'route' => 'index',
+            'extras' => array(
+              'safe_label' => true
+            )
+          )
+        );
+        //$menu->addChild('Home', array('route' => 'index'));
 
         /*$menu->addChild('Test', array(
             'route' => 'blog_show',
