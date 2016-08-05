@@ -12,24 +12,16 @@
 
     <div class="card col-md-12">
         <div class="card-header">
-            Mon CV
+            {{ 'Mon CV'|trans }}
         </div>
         <div class="card-block">
             <div id="monCV"></div>
-            <p>Vous pouvez télécharger mon cv en cliquant <a href="{{ asset('bundles/am/doc/cv.pdf') }}" download>ici</a></p>
+            <p>{% trans %}Vous pouvez télécharger mon cv en cliquant{% endtrans %} <a href="{{ asset('bundles/am/doc/amine_maddah.pdf') }}" download>{{ 'ici'|trans }}</a></p>
         </div>
         <hr />
-        <div class="card col-md-8 col-md-offset-2">
-            <h4>Me contacter</h4>
-            <div class="card-block">
-                {{ form_start(form) }}
-                {{ form_row(form.nom, {'label' : 'Votre nom :'}) }}
-                {{ form_row(form.titre, {'label' : 'Objet :'}) }}
-                {{ form_row(form.message, {'label' : 'Votre message :'}) }}
-                {{ form_widget(form.submit, {'class': 'col-sm-offset-3'}) }}
-                {{ form_end(form) }}
-            </div>
-        </div>
+
+        {% include('AMBundle::baseContact.html.twig') %}
+
     </div>
 
 
@@ -42,5 +34,5 @@
         var options = {
             fallbackLink: '<p>Votre nagiateur ne supporte pas le lecteur PDF que j\'utilise.</p>'
         };
-        PDFObject.embed("{{ asset('doc/cv.pdf') }}", "#monCV", options);</script>
+        PDFObject.embed("{{ asset('bundles/am/doc/amine_maddah.pdf') }}", "#monCV", options);</script>
 {% endblock %}

@@ -8,7 +8,7 @@
 {% block body %}
 
     <div class="text-center">
-    <img class="img-circle" src="{{ asset('bundles/am/images/sur.JPG') }}" height="200" alt="Photo de Amine Maddah"/>
+    <img class="img-circle" src="{{ asset('bundles/am/images/amine_maddah.JPG') }}" height="200" alt="Photo de Amine Maddah"/>
         <br />
         <a href="https://fr.linkedin.com/in/aminemaddah" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
         <a href="https://github.com/amaddah" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
@@ -16,28 +16,18 @@
     <hr />
     <div class="card col-md-8 col-md-offset-2 text-center">
         <div class="card-header">
-            Bonjour!
+            {{ 'Bonjour'|trans }} !
         </div>
         <div class="card-block">
             {# <p>Je m'appelle Amine MADDAH, je suis un étudiant en 5ème année à l'INSA Centre Val de Loire.</p>
             <p>Je suis actuellement à la recherche d'un stage de fin d'étude en sécurité informatique.</p> #}
-            <p>Site en construction ... Reviens plus tard :)</p>
+            <p>{% trans %}Site en construction ... reviens plus tard{% endtrans %}. :)</p>
         </div>
         <div class="card-footer text-muted">
         </div>
     </div>
 
-    <div class="card col-md-8 col-md-offset-2">
-        <h4>Me contacter</h4>
-        <div class="card-block">
-            {{ form_start(form) }}
-                {{ form_row(form.nom, {'label' : 'Votre nom :'}) }}
-                {{ form_row(form.titre, {'label' : 'Objet :'}) }}
-                {{ form_row(form.message, {'label' : 'Votre message :'}) }}
-                {{ form_widget(form.submit, {'class': 'col-sm-offset-3'}) }}
-            {{ form_end(form) }}
-        </div>
-    </div>
+    {% include('AMBundle::baseContact.html.twig') %}
 
 
 {% endblock %}

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>Bonjour</source>
+                <target>Hello</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Site en construction ... reviens plus tard</source>
+                <target>Website under construction, please come back later</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Mes expériences</source>
+                <target>My experiences</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Formation</source>
+                <target>Education</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Mon CV</source>
+                <target>My curriculum vitae</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Mes passions</source>
+                <target>My passions</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Mon CV</source>
+                <target>My CV</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Votre nom :</source>
+                <target>Your name : </target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Objet :</source>
+                <target>Subject :</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>Votre message :</source>
+                <target>Your message:</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>Valider</source>
+                <target>Submit</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>Vous pouvez télécharger mon cv en cliquant</source>
+                <target>Download link is available by clicking</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>ici</source>
+                <target>here</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>Me contacter</source>
+                <target>Contact me</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

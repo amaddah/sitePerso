@@ -1,0 +1,11 @@
+<div class="card col-md-8 col-md-offset-2">
+    <h4>{{ 'Me contacter'|trans }}</h4>
+    <div class="card-block">
+        {{ form_start(form) }}
+        {{ form_row(form.nom, {'label' : 'Votre nom :'}) }}
+        {{ form_row(form.titre, {'label' : 'Objet :'}) }}
+        {{ form_row(form.message, {'label' : 'Votre message :'}) }}
+        {{ form_widget(form.submit, {'class': 'col-sm-offset-3'}) }}
+        {{ form_end(form) }}
+    </div>
+</div>
