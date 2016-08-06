@@ -3,6 +3,8 @@
 namespace AMBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Contact
@@ -27,6 +29,14 @@ class Contact
      * @ORM\Column(name="nom", type="string", length=30)
      */
     private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string")
+     * @Assert\Email
+     */
+    private $email;
 
     /**
      * @var string
@@ -159,6 +169,22 @@ class Contact
     public function getDateContact()
     {
         return $this->dateContact;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 }
 

@@ -58,6 +58,26 @@
                 <source>Me contacter</source>
                 <target>Contact me</target>
             </trans-unit>
+            <trans-unit id="15">
+                <source>Votre demande de contact a bien été reçu.</source>
+                <target>Your request has been received.</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>Accueil</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>Votre E-mail :</source>
+                <target>Your E-mail :</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>Je m'appelle Amine MADDAH, je suis un étudiant en dernière année d'école d'ingnéieur à l'INSA Centre Val-de-Loire.</source>
+                <target>My name is Amine MADDAH, I'm a student in my last year of engineering school at INSA Centre Val-de-Loire</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>Passionné par les nouvelles technologies, notamment par les objets connectés, j'ai décidé cette année de me spécialiser dans la sécurité des systèmes ubiquitaires.</source>
+                <target>This year, because I'm a passionate by new technologies and connected objects, I decided to specialize in Ubiquitous Computing Security.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

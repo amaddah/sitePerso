@@ -11,21 +11,9 @@
         </div>
         <div class="card-block">
                 {% for formation in formations %}
-                    <div class="card">
-                        <div class="card-header">
                             {{ formation.institut }}
-
-                        </div>
-                        <div class="card-block">
-                            <h4 class="card-title">
-                                <small>{% if formation.dateDebut %}{{ formation.dateDebut|date('Y-m-d H:i:s') }}{% endif %} -- {% if formation.dateFin %}{{ formation.dateFin|date('Y-m-d H:i:s') }}{% endif %}</small>
-                            </h4>
-                            <p class="card-text">{{ formation.diplome }}</p>
-                        </div>
-                        <div class="card-footer text-muted">
-                        </div>
-                    </div>
-                    <hr />
+                             {% if formation.dateDebut %}{{ formation.dateDebut|date('d/m/Y') }}{% endif %} -- {% if formation.dateFin %}{{ formation.dateFin|date('d/m/Y') }}{% endif %}
+                            {{ formation.diplome }}
                 {% endfor %}
         </div>
         <div class="card-footer text-muted">

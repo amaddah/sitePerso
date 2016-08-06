@@ -7,21 +7,20 @@
 
 {% block body %}
 
-    <div class="text-center">
+    <div class="col-md-8 col-md-offset-2 text-center">
     <img class="img-circle" src="{{ asset('bundles/am/images/amine_maddah.JPG') }}" height="200" alt="Photo de Amine Maddah"/>
         <br />
         <a href="https://fr.linkedin.com/in/aminemaddah" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-        <a href="https://github.com/amaddah" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a href="https://github.com/amaddah" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/solucer01" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
     </div>
-    <hr />
     <div class="card col-md-8 col-md-offset-2 text-center">
         <div class="card-header">
             {{ 'Bonjour'|trans }} !
         </div>
         <div class="card-block">
-            {# <p>Je m'appelle Amine MADDAH, je suis un étudiant en 5ème année à l'INSA Centre Val de Loire.</p>
-            <p>Je suis actuellement à la recherche d'un stage de fin d'étude en sécurité informatique.</p> #}
-            <p>{% trans %}Site en construction ... reviens plus tard{% endtrans %}. :)</p>
+            <p>{% trans %}Je m'appelle Amine MADDAH, je suis un étudiant en dernière année d'école d'ingnéieur à l'INSA Centre Val-de-Loire.{% endtrans %}</p>
+            <p>{% trans %}Passionné par les nouvelles technologies, notamment par les objets connectés, j'ai décidé cette année de me spécialiser dans la sécurité des systèmes ubiquitaires.{% endtrans %}</p>
         </div>
         <div class="card-footer text-muted">
         </div>

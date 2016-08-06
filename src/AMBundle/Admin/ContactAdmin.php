@@ -17,7 +17,7 @@
      protected function configureFormFields(FormMapper $formMapper)
      {
          $formMapper->add('nom')
-            ->add('titre')
+            ->add('email')
             ->add('titre')
             ->add('message');
      }
@@ -25,6 +25,7 @@
      protected function configureDatagridFilters(DatagridMapper $datagridMapper)
      {
          $datagridMapper->add('nom')
+            ->add('email')
             ->add('titre')
             ->add('message');
      }
@@ -32,6 +33,7 @@
      protected function configureListFields(ListMapper $listMapper)
      {
          $listMapper->addIdentifier('nom')
+            ->addIdentifier('email')
             ->addIdentifier('titre')
             ->addIdentifier('message')
             ->add('_action', 'actions', array(

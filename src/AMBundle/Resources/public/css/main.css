@@ -13,8 +13,12 @@
     color: #FFFFFF;
 }
 
-/* container */
+/* body */
 
+body{
+    background-color: whitesmoke;
+}
+/* container */
 #layout-container {
     margin-top: 100px;
     min-height: 500px;
@@ -43,7 +47,7 @@ footer {
 
 footer a {
     color: #DDDDDD;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 footer a:hover {

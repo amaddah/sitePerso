@@ -37,6 +37,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    #exception_controller:  AMBundle:Default:showException # a activer en prod
+    cache: false # a eviter en prod
 
 # Doctrine Configuration
 doctrine:
@@ -98,10 +100,6 @@ knp_menu:
 mopa_bootstrap:
     menu: ~
     form: ~ # Probleme affichage form
-
-
-twig:
-    cache: false # a eviter en prod
 
 sonata_block:
     default_contexts: [cms]
