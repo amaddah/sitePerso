@@ -6,7 +6,7 @@
         .toggle.btn {
             width: 4em !important;
             height: 35px !important;
-            margin-bottom: 1em;
+            margin: 20px !important;
         }
     </style>
 {% endblock %}
@@ -20,18 +20,18 @@
                 {% for experience in experiences %}
                     {% if experience == experiences[0] %}
                     <input id="toggle-event{{ experience.id }}" type="checkbox" checked data-toggle="toggle" data-onstyle="success">
-                    <div class="card">
+                    <div class="card-experience col-md-8 col-md-offset-2 text-center">
                     <h3>Experience en cours</h3>
                     {% else %}
                     <input id="toggle-event{{ experience.id }}" type="checkbox" data-toggle="toggle">
-                    <div class="card" style="display:none">
+                    <div class="card-experience col-md-8 col-md-offset-2 text-center" style="display:none">
                     {% endif %}
                         <div class="card-header">
                             {{ experience.titre }}
                         </div>
                         <div class="card-block">
                             <h4 class="card-title">
-                                <small>{% if experience.dateDebut %}{{ experience.dateDebut|date('Y-m-d H:i:s') }}{% endif %} -- {% if experience.dateFin %}{{ experience.dateFin|date('Y-m-d H:i:s') }}{% endif %}</small>
+                                <small>{% if experience.dateDebut %}{{ experience.dateDebut|date('Y-m-d') }}{% endif %} -- {% if experience.dateFin %}{{ experience.dateFin|date('Y-m-d') }}{% endif %}</small>
                             </h4>
                             <p class="card-text">{{ experience.description }}</p>
                         </div>
@@ -39,7 +39,7 @@
                             {{ experience.membres }}
                         </div>
                     </div>
-                    <hr />
+                    <div style="clear:both"></div>
                 {% endfor %}
         </div>
         <div class="card-footer text-muted">
@@ -56,7 +56,7 @@
             {% for experience in experiences %}
 
             $('#toggle-event{{ experience.id }}').change(function() {
-                that = $(this).parent().next('.card');
+                that = $(this).parent().next('.card-experience');
                 if(!$(this).prop('checked'))
                         that.hide();
                 else

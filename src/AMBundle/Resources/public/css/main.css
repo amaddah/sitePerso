@@ -23,16 +23,25 @@ body{
     margin-top: 100px;
     min-height: 500px;
 }
-.card {
+.card,
+.card-experience{
     display: block;
     -webkit-box-shadow: 0 1px 3px 1px rgba(0,0,0,0.2);
     box-shadow: 0 1px 3px 1px rgba(0,0,0,0.2);
     -webkit-border-radius: 0px;
-    border-radius: 0px;
-    padding: 20px 10px;
+    border-radius: 2em;
+    padding: 16px 8px;
     font-size: 1.1em;
-    margin-bottom: 30px;
-    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #E3F2FD;
+}
+
+.card-experience {
+    border: 2px solid #BBDEFB;
+    background-color: #E3F2FD;
 }
 
 

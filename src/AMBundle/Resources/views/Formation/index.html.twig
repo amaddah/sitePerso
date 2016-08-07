@@ -7,13 +7,14 @@
 {% block body %}
     <div class="card col-md-12">
         <div class="card-header">
-            <h1>Formation list</h1>
+            <h1>Ma formation</h1>
         </div>
         <div class="card-block">
                 {% for formation in formations %}
-                            {{ formation.institut }}
-                             {% if formation.dateDebut %}{{ formation.dateDebut|date('d/m/Y') }}{% endif %} -- {% if formation.dateFin %}{{ formation.dateFin|date('d/m/Y') }}{% endif %}
-                            {{ formation.diplome }}
+                    <p><img src="{{ asset('bundles/am/images/insa.png') }}"/>
+                    {{ formation.institut }}</p>
+                            <small>{% if formation.dateDebut %}{{ formation.dateDebut|date('Y') }}{% endif %} -- {% if formation.dateFin %}{{ formation.dateFin|date('Y') }}{% endif %}</small>
+                            <p>{{ formation.diplome }}</p>
                 {% endfor %}
         </div>
         <div class="card-footer text-muted">
